@@ -1,25 +1,29 @@
 import React from 'react'
+import styles from './ContactItem.module.css'
+
 
 function ContactItem({data :{id, name, lastName , email, phone} , deleteHandler}) {
     // console.log(data)
 
    
   return (
-    <div>
-      <li key={id}>
-       <p>{name} {lastName}</p>
+    
+      <li className={styles.item}>
        <p>
-         <span></span> {phone}
-       </p>
-   
+        {name} {lastName}
+        </p>
+           
        <p>
-         <span></span> {email}
+         <span>📨</span> {email}
        </p>
-         
-         <button onClick={()=> deleteHandler(id)}>Del </button>
-     
+
+       <p>
+         <span>📞</span> {phone}
+       </p>
+
+         <button onClick={()=> deleteHandler(id)}>🛢</button>
       </li>
-    </div>
+    
   )
 }
 
